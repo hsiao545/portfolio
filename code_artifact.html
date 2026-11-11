@@ -1,0 +1,1116 @@
+<!DOCTYPE html>
+<html lang="zh-TW" class="scroll-smooth">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>蕭雅玲 Ya-Ling Hsiao ｜ 數位行銷策略與 MarTech 自動化顧問</title>
+  
+  <!-- Google Fonts: Noto Serif TC, Noto Sans TC, Plus Jakarta Sans -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@300;400;500;600;700&family=Noto+Serif+TC:wght@400;600;700&family=Plus+Jakarta+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+  
+  <!-- Tailwind CSS -->
+  <script src="https://cdn.tailwindcss.com"></script>
+  
+  <!-- FontAwesome Icons for clean editorial iconography -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
+
+  <script>
+    tailwind.config = {
+      darkMode: 'class',
+      theme: {
+        extend: {
+          fontFamily: {
+            serif: ['"Noto Serif TC"', 'Georgia', 'serif'],
+            sans: ['"Noto Sans TC"', '"Plus Jakarta Sans"', 'sans-serif'],
+            display: ['"Plus Jakarta Sans"', '"Noto Sans TC"', 'sans-serif']
+          },
+          colors: {
+            paper: '#FBF9F5',
+            'paper-card': '#FFFFFF',
+            'paper-border': '#E8E4DD',
+            ink: '#1F2022',
+            'ink-light': '#5A5C60',
+            'ink-muted': '#8A8C90',
+            clay: '#A2583E',
+            sand: '#EDE8E1',
+            slatewarm: '#2B303A'
+          }
+        }
+      }
+    }
+  </script>
+
+  <style>
+    body {
+      background-color: #FBF9F5;
+      color: #1F2022;
+      font-family: 'Noto Sans TC', sans-serif;
+      -webkit-font-smoothing: antialiased;
+      overflow-x: hidden;
+    }
+    
+    /* Japanese editorial grid lines */
+    .bg-grid-subtle {
+      background-size: 48px 48px;
+      background-image: 
+        linear-gradient(to right, rgba(0, 0, 0, 0.03) 1px, transparent 1px),
+        linear-gradient(to bottom, rgba(0, 0, 0, 0.03) 1px, transparent 1px);
+    }
+
+    .editorial-border {
+      border-color: #E8E4DD;
+    }
+
+    /* Magazine Column Rule */
+    .magazine-rule {
+      position: relative;
+    }
+    .magazine-rule::after {
+      content: "";
+      position: absolute;
+      bottom: 0;
+      left: 0;
+      width: 40px;
+      height: 2px;
+      background-color: #A2583E;
+    }
+
+    /* Custom Notification Toast */
+    #copy-toast {
+      transition: transform 0.3s cubic-bezier(0.16, 1, 0.3, 1), opacity 0.3s ease;
+    }
+  </style>
+</head>
+
+<body class="selection:bg-clay selection:text-white bg-grid-subtle min-h-screen flex flex-col justify-between">
+
+  <!-- ================= TOP EDITORIAL NAVIGATION ================= -->
+  <header class="sticky top-0 z-40 bg-[#FBF9F5]/90 backdrop-blur-md border-b editorial-border">
+    <div class="max-w-6xl mx-auto px-6 py-4 flex items-center justify-between">
+      <div class="flex items-center space-x-4">
+        <a href="#hero" class="group flex items-baseline space-x-2">
+          <span class="font-serif text-2xl font-bold tracking-tight text-ink group-hover:text-clay transition-colors">蕭雅玲</span>
+          <span class="text-xs uppercase tracking-widest text-ink-muted font-display">Ya-Ling Hsiao</span>
+        </a>
+      </div>
+
+      <nav class="hidden md:flex items-center space-x-8 text-sm text-ink-light">
+        <a href="#metrics" class="hover:text-clay transition-colors">實戰數據</a>
+        <a href="#projects" class="hover:text-clay transition-colors">專案作品</a>
+        <a href="#skills" class="hover:text-clay transition-colors">核心優勢</a>
+        <a href="#philosophy" class="hover:text-clay transition-colors">工作哲學</a>
+        <a href="#contact" class="hover:text-clay transition-colors">聯絡諮詢</a>
+      </nav>
+
+      <a href="#contact" class="px-4 py-2 border border-ink text-xs tracking-widest uppercase hover:bg-ink hover:text-white transition-all duration-300 rounded-sm font-medium">
+        合作洽談
+      </a>
+    </div>
+  </header>
+
+  <!-- ================= HERO EDITORIAL SECTION ================= -->
+  <section id="hero" class="relative pt-16 pb-20 md:pt-24 md:pb-28 border-b editorial-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-12 items-center">
+        <!-- Hero Text -->
+        <div class="lg:col-span-8 space-y-6">
+          <div class="inline-flex items-center space-x-2 border-b border-clay pb-1 text-xs tracking-widest text-clay font-medium uppercase">
+            <span>Portfolio / Selected Works</span>
+            <span class="text-ink-muted">•</span>
+            <span>2014 – 2026</span>
+          </div>
+
+          <h1 class="font-serif text-3xl sm:text-4xl md:text-5xl lg:text-6xl text-ink font-semibold leading-[1.25] tracking-tight">
+            以數據洞察獲客，<br class="hidden sm:inline" />
+            以美學與自動化構建長效複利。
+          </h1>
+
+          <p class="text-ink-light text-base md:text-lg leading-relaxed max-w-2xl font-light">
+            我是<strong class="font-medium text-ink">蕭雅玲</strong>。具備逾十年觀光旅宿與實體連鎖門市行銷實戰經驗。跨越「付費廣告漏斗、雜誌感視覺策展、MarTech 輕量系統開發」三大維度，跳脫傳統片面思考，專注為品牌打造真實成交且高延續性的成長飛輪。
+          </p>
+
+          <!-- Core Capability Badges -->
+          <div class="pt-2 flex flex-wrap gap-2.5">
+            <span class="px-3.5 py-1.5 text-xs bg-sand/60 text-ink-light border editorial-border rounded-full tracking-wide">
+              <i class="fa-solid fa-crosshairs text-clay mr-1.5"></i>精準廣告與成本優化
+            </span>
+            <span class="px-3.5 py-1.5 text-xs bg-sand/60 text-ink-light border editorial-border rounded-full tracking-wide">
+              <i class="fa-solid fa-film text-clay mr-1.5"></i>長青影音與視覺策展
+            </span>
+            <span class="px-3.5 py-1.5 text-xs bg-sand/60 text-ink-light border editorial-border rounded-full tracking-wide">
+              <i class="fa-solid fa-code text-clay mr-1.5"></i>MarTech 輕量化系統開發
+            </span>
+            <span class="px-3.5 py-1.5 text-xs bg-sand/60 text-ink-light border editorial-border rounded-full tracking-wide">
+              <i class="fa-solid fa-person-running text-clay mr-1.5"></i>全馬自律推進哲學
+            </span>
+          </div>
+
+          <div class="pt-6 flex items-center space-x-4">
+            <a href="#projects" class="px-6 py-3.5 bg-ink text-paper text-sm tracking-wider hover:bg-clay transition-colors duration-200 shadow-sm flex items-center">
+              <span>探索專案成果</span>
+              <i class="fa-solid fa-arrow-down-long ml-2 text-xs"></i>
+            </a>
+            <a href="#contact" class="px-6 py-3.5 border border-ink-light/40 text-ink hover:border-ink transition-colors text-sm">
+              即刻與我聯繫
+            </a>
+          </div>
+        </div>
+
+        <!-- Editorial Info Column / Side Card -->
+        <div class="lg:col-span-4 bg-paper-card p-8 border editorial-border shadow-[4px_4px_0px_0px_#E8E4DD] space-y-6">
+          <div class="border-b editorial-border pb-4">
+            <span class="text-xs font-mono uppercase tracking-widest text-ink-muted">Profile Snapshot</span>
+            <h3 class="font-serif text-xl font-bold text-ink mt-1">實體與數位全通路引流</h3>
+          </div>
+
+          <ul class="space-y-4 text-xs leading-relaxed text-ink-light divide-y divide-paper-border/70">
+            <li class="pt-2">
+              <div class="font-medium text-ink">專長領域</div>
+              <div>成效廣告 (Meta)、YouTube 內容策劃、Threads 社群擴散、Google Apps Script / Web 自動化</div>
+            </li>
+            <li class="pt-3">
+              <div class="font-medium text-ink">服務客群與產業</div>
+              <div>汽車實體門市、連鎖保修、觀光旅宿、生活美學生活風格品牌</div>
+            </li>
+            <li class="pt-3">
+              <div class="font-medium text-ink">核心方法論</div>
+              <div>拒絕空談創意，以真實轉換單價（CPL / CAC）與門市現場留存率為最高準則</div>
+            </li>
+          </ul>
+
+          <div class="pt-2">
+            <div class="bg-sand/40 p-4 border border-sand text-xs text-ink-light rounded-sm">
+              <span class="text-clay font-medium"><i class="fa-solid fa-circle-check mr-1"></i> 2026 最新實績已驗證</span>
+              <p class="mt-1 text-[11px] leading-relaxed text-ink-muted">包含 Meta 廣告報表、台灣輪胎王 YT 觀看報告與 Threads 後台觸及數據。</p>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= KEY METRICS COUNTER BAR ================= -->
+  <section id="metrics" class="py-14 bg-white border-b editorial-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 pb-4 border-b editorial-border">
+        <div>
+          <span class="text-xs uppercase tracking-widest text-clay font-mono">Performance Highlights</span>
+          <h2 class="font-serif text-2xl font-bold text-ink mt-1">2026 年度實戰核心成效指標</h2>
+        </div>
+        <p class="text-xs text-ink-muted mt-2 md:mt-0 font-light max-w-sm">
+          數據源自真實廣告帳戶報表、YouTube 數據分析及社群後台統計，嚴謹客觀呈現。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-2 lg:grid-cols-5 gap-6 lg:gap-8 divide-y sm:divide-y-0 sm:divide-x divide-paper-border">
+        
+        <!-- Metric 1 -->
+        <div class="pt-4 sm:pt-0 sm:px-4 first:pl-0">
+          <div class="text-xs font-mono text-ink-muted mb-1">平均每筆諮詢成本</div>
+          <div class="font-display text-3xl lg:text-4xl font-bold text-ink tracking-tight flex items-baseline">
+            <span class="text-clay text-lg mr-1">NT$</span>47.1
+          </div>
+          <p class="text-xs text-ink-light mt-2 leading-relaxed">
+            Meta 廣告線索取得成本，特定熱門車款低至 <strong class="text-ink">NT$29.98</strong>。
+          </p>
+        </div>
+
+        <!-- Metric 2 -->
+        <div class="pt-4 sm:pt-0 sm:px-4">
+          <div class="text-xs font-mono text-ink-muted mb-1">精準即時諮詢線索</div>
+          <div class="font-display text-3xl lg:text-4xl font-bold text-ink tracking-tight">
+            2,077<span class="text-clay text-xl font-normal">+</span>
+          </div>
+          <p class="text-xs text-ink-light mt-2 leading-relaxed">
+            不到10萬預算帶入 <strong class="text-ink">1,751 位</strong> 全新諮詢顧客至門市。
+          </p>
+        </div>
+
+        <!-- Metric 3 -->
+        <div class="pt-4 sm:pt-0 sm:px-4">
+          <div class="text-xs font-mono text-ink-muted mb-1">全域自然社群瀏覽</div>
+          <div class="font-display text-3xl lg:text-4xl font-bold text-ink tracking-tight">
+            900<span class="text-clay text-xl font-normal">萬+</span>
+          </div>
+          <p class="text-xs text-ink-light mt-2 leading-relaxed">
+            長效內容積累，全渠道日均瀏覽逾 2.8 萬次，單日峰值達 7 萬次。
+          </p>
+        </div>
+
+        <!-- Metric 4 -->
+        <div class="pt-4 sm:pt-0 sm:px-4">
+          <div class="text-xs font-mono text-ink-muted mb-1">YouTube 總觀看次數</div>
+          <div class="font-display text-3xl lg:text-4xl font-bold text-ink tracking-tight">
+            25.9<span class="text-clay text-xl font-normal">萬+</span>
+          </div>
+          <p class="text-xs text-ink-light mt-2 leading-relaxed">
+            縮圖曝光 70 萬次，平均點擊率維持 <strong class="text-ink">5.95%</strong>（遠優於同業）。
+          </p>
+        </div>
+
+        <!-- Metric 5 -->
+        <div class="pt-4 sm:pt-0 sm:px-4 last:pr-0">
+          <div class="text-xs font-mono text-ink-muted mb-1">Threads 破圈觸及數</div>
+          <div class="font-display text-3xl lg:text-4xl font-bold text-ink tracking-tight">
+            18.9<span class="text-clay text-xl font-normal">萬+</span>
+          </div>
+          <p class="text-xs text-ink-light mt-2 leading-relaxed">
+            3個月內創造，其中 <strong class="text-ink">99% 以上</strong> 成功觸達非追蹤精準車主。
+          </p>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PORTFOLIO / CASE STUDIES ================= -->
+  <section id="projects" class="py-20 max-w-6xl mx-auto px-6">
+    
+    <div class="flex flex-col md:flex-row md:items-end justify-between mb-12">
+      <div>
+        <span class="text-xs uppercase tracking-widest text-clay font-mono">Case Studies</span>
+        <h2 class="font-serif text-3xl font-bold text-ink mt-1">精選專案成效</h2>
+      </div>
+
+      <!-- Filter Tabs -->
+      <div class="flex flex-wrap gap-2 mt-4 md:mt-0" id="filter-container">
+        <button onclick="filterProjects('all')" class="filter-btn active px-3.5 py-1.5 text-xs border border-ink bg-ink text-white transition-all rounded-sm font-medium">
+          全部實績
+        </button>
+        <button onclick="filterProjects('ads')" class="filter-btn px-3.5 py-1.5 text-xs border border-paper-border bg-white text-ink-light hover:border-ink transition-all rounded-sm">
+          成效廣告
+        </button>
+        <button onclick="filterProjects('content')" class="filter-btn px-3.5 py-1.5 text-xs border border-paper-border bg-white text-ink-light hover:border-ink transition-all rounded-sm">
+          影音與社群
+        </button>
+        <button onclick="filterProjects('martech')" class="filter-btn px-3.5 py-1.5 text-xs border border-paper-border bg-white text-ink-light hover:border-ink transition-all rounded-sm">
+          MarTech 自動化
+        </button>
+      </div>
+    </div>
+
+    <!-- Project Cards Grid -->
+    <div class="grid grid-cols-1 md:grid-cols-2 gap-8" id="projects-grid">
+
+      <!-- Case 1: Meta Ads Funnel -->
+      <div class="project-card bg-paper-card border editorial-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow group relative" data-category="ads">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-ink-muted border-b editorial-border pb-3">
+            <span class="uppercase tracking-wider">Project 01 / Meta Ads</span>
+            <span class="text-clay font-medium"><i class="fa-solid fa-arrow-trend-up mr-1"></i>獲客成果</span>
+          </div>
+
+          <h3 class="font-serif text-xl font-bold text-ink group-hover:text-clay transition-colors">
+            精準車款受眾切片與成效型私訊獲客漏斗
+          </h3>
+
+          <p class="text-xs text-ink-light leading-relaxed">
+            擺脫車行傳統亂槍打鳥廣告，鎖定高換胎率的特定休旅車款（Corolla Cross, HR-V）與米其林主力胎款，以痛點圖文發動 A/B 測試，精準導流至門市線上私訊諮詢。
+          </p>
+
+          <!-- Metrics Tag Pills -->
+          <div class="bg-sand/30 p-4 rounded border editorial-border space-y-2">
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div>
+                <span class="text-ink-muted block text-[11px]">總廣告支出</span>
+                <span class="font-display font-bold text-ink text-sm">NT$ 97,898</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">不重複諮詢線索</span>
+                <span class="font-display font-bold text-ink text-sm">2,077 則 (1,751 新客)</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">平均線索成本</span>
+                <span class="font-display font-bold text-clay text-sm">NT$ 47.1 / 則</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">Meta 官方評級</span>
+                <span class="font-bold text-ink text-sm">3 項指標皆高於平均</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4 border-t editorial-border flex items-center justify-between">
+          <span class="text-[11px] text-ink-muted font-mono">Meta Ads Manager • 2026</span>
+          <button onclick="openModal('modal-ads')" class="text-xs font-medium text-ink hover:text-clay flex items-center space-x-1">
+            <span>檢視數據詳情</span>
+            <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case 2: YouTube Long-form & High-performing Shorts -->
+      <div class="project-card bg-paper-card border editorial-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow group relative" data-category="content">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-ink-muted border-b editorial-border pb-3">
+            <span class="uppercase tracking-wider">Project 02 / YouTube &amp; Shorts</span>
+            <span class="text-clay font-medium"><i class="fa-solid fa-play mr-1"></i>高流量爆款影音</span>
+          </div>
+
+          <h3 class="font-serif text-xl font-bold text-ink group-hover:text-clay transition-colors">
+            「台灣輪胎王」影音策展與破萬短影音傳播矩陣
+          </h3>
+
+          <p class="text-xs text-ink-light leading-relaxed">
+            把黑手產業的艱澀規格轉化為車主看得懂的實測評測與趣味話題短片。親自操刀企劃腳本與封面編排，產出單支最高逾 4.4 萬次觀看的爆款科普短影音，兼具長效留存與高點閱率。
+          </p>
+
+          <!-- Metrics Tag Pills -->
+          <div class="bg-sand/30 p-4 rounded border editorial-border space-y-2">
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div>
+                <span class="text-ink-muted block text-[11px]">頻道累計觀看</span>
+                <span class="font-display font-bold text-ink text-sm">259,013 次</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">縮圖平均 CTR</span>
+                <span class="font-display font-bold text-clay text-sm">5.95% (業界頂標)</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">短影音最高觀看</span>
+                <span class="font-display font-bold text-clay text-sm">4.4 萬+ (Primacy 5)</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">旗艦評測累積時長</span>
+                <span class="font-display font-bold text-ink text-sm">376.4 小時 (PS5對決)</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4 border-t editorial-border flex items-center justify-between">
+          <span class="text-[11px] text-ink-muted font-mono">YouTube Shorts &amp; Analytics • 2026</span>
+          <button onclick="openModal('modal-yt')" class="text-xs font-medium text-ink hover:text-clay flex items-center space-x-1">
+            <span>檢視爆款影音與連結</span>
+            <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case 3: Threads Community Growth -->
+      <div class="project-card bg-paper-card border editorial-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow group relative" data-category="content">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-ink-muted border-b editorial-border pb-3">
+            <span class="uppercase tracking-wider">Project 03 / Threads</span>
+            <span class="text-clay font-medium"><i class="fa-solid fa-bolt mr-1"></i>爆款破圈</span>
+          </div>
+
+          <h3 class="font-serif text-xl font-bold text-ink group-hover:text-clay transition-colors">
+            Threads 跨界破圈：99% 外溢觸及攻佔車主心智
+          </h3>
+
+          <p class="text-xs text-ink-light leading-relaxed">
+            洞悉演算法特性，結合 F1 賽車話題、AI 熱門應用與換胎日常幽默感，在不投放付費廣告下，於短短三個月內切進 25-44 歲主力高消費力男性車主圈層，收錄多篇破萬自然觸及的互動代表作。
+          </p>
+
+          <!-- Metrics Tag Pills -->
+          <div class="bg-sand/30 p-4 rounded border editorial-border space-y-2">
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div>
+                <span class="text-ink-muted block text-[11px]">3個月總瀏覽數</span>
+                <span class="font-display font-bold text-ink text-sm">318,062 次</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">不重複帳號觸及</span>
+                <span class="font-display font-bold text-clay text-sm">189,587 人</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">主力車主受眾</span>
+                <span class="font-bold text-ink text-sm">84.5% 男性 / 72% 中壯年</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">精選爆款貼文</span>
+                <span class="font-display font-bold text-clay text-sm">3 篇代表作收錄</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4 border-t editorial-border flex items-center justify-between">
+          <span class="text-[11px] text-ink-muted font-mono">Threads Insights &amp; Posts • 2026.08-11</span>
+          <button onclick="openModal('modal-threads')" class="text-xs font-medium text-ink hover:text-clay flex items-center space-x-1">
+            <span>檢視精選貼文與數據</span>
+            <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i>
+          </button>
+        </div>
+      </div>
+
+      <!-- Case 4: MarTech Automation -->
+      <div class="project-card bg-paper-card border editorial-border p-8 flex flex-col justify-between hover:shadow-md transition-shadow group relative" data-category="martech">
+        <div class="space-y-4">
+          <div class="flex items-center justify-between text-xs font-mono text-ink-muted border-b editorial-border pb-3">
+            <span class="uppercase tracking-wider">Project 04 / MarTech System</span>
+            <span class="text-clay font-medium"><i class="fa-solid fa-gear mr-1"></i>流程自動化</span>
+          </div>
+
+          <h3 class="font-serif text-xl font-bold text-ink group-hover:text-clay transition-colors">
+            門市 VIP 查詢與雙軌計價輕量自動化系統
+          </h3>
+
+          <p class="text-xs text-ink-light leading-relaxed">
+            為解決現場人員需頻繁翻閱紙本及多張試算表、計算車主折抵資格易出錯的痛點。自主開發 Web 前端並整合 Google Apps Script 與 Google Sheets 雲端資料庫，實現一秒查價與精準權益核算。
+          </p>
+
+          <!-- Metrics Tag Pills -->
+          <div class="bg-sand/30 p-4 rounded border editorial-border space-y-2">
+            <div class="grid grid-cols-2 gap-3 text-xs">
+              <div>
+                <span class="text-ink-muted block text-[11px]">現場行政工時</span>
+                <span class="font-display font-bold text-clay text-sm">縮短逾 40%</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">技術堆疊架構</span>
+                <span class="font-bold text-ink text-sm">GAS / Web 前端 / Sheets</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">雲端資料庫整合</span>
+                <span class="font-bold text-ink text-sm">Google Sheets 即時同步</span>
+              </div>
+              <div>
+                <span class="text-ink-muted block text-[11px]">商業成效</span>
+                <span class="font-bold text-ink text-sm">回廠保養率與客單價成長</span>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="pt-6 mt-4 border-t editorial-border flex items-center justify-between">
+          <span class="text-[11px] text-ink-muted font-mono">Workflow Automation • Proprietary</span>
+          <button onclick="openModal('modal-martech')" class="text-xs font-medium text-ink hover:text-clay flex items-center space-x-1">
+            <span>了解架構邏輯</span>
+            <i class="fa-solid fa-arrow-right-long text-xs ml-1"></i>
+          </button>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CORE COMPETENCIES (EDITORIAL GRID) ================= -->
+  <section id="skills" class="py-20 bg-white border-y editorial-border">
+    <div class="max-w-6xl mx-auto px-6">
+      
+      <div class="max-w-2xl mb-12">
+        <span class="text-xs uppercase tracking-widest text-clay font-mono">Expertise & Skills</span>
+        <h2 class="font-serif text-3xl font-bold text-ink mt-1">四維合一的實戰技能架構</h2>
+        <p class="text-xs text-ink-light mt-2 font-light">
+          不單是理論家，更是具備親自編碼、設計、投放、數據分析與現場串聯的複合型即戰力。
+        </p>
+      </div>
+
+      <div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+        
+        <!-- Skill 1 -->
+        <div class="space-y-3 p-6 bg-paper rounded-sm border editorial-border">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/60 text-clay rounded-full text-base mb-4">
+            <i class="fa-solid fa-chart-line"></i>
+          </div>
+          <h4 class="font-serif font-bold text-base text-ink">成效獲客與漏斗優化</h4>
+          <p class="text-xs text-ink-light leading-relaxed">
+            熟悉 Meta Ads 廣告架構、精細化受眾包測試、素材 A/B 測試。注重每筆線索獲取成本（CPL）與實際線下到店轉換。
+          </p>
+          <div class="pt-2 text-[11px] text-ink-muted font-mono">Meta Ads • GA4 • 漏斗歸因</div>
+        </div>
+
+        <!-- Skill 2 -->
+        <div class="space-y-3 p-6 bg-paper rounded-sm border editorial-border">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/60 text-clay rounded-full text-base mb-4">
+            <i class="fa-solid fa-video"></i>
+          </div>
+          <h4 class="font-serif font-bold text-base text-ink">影音策劃與視覺美學</h4>
+          <p class="text-xs text-ink-light leading-relaxed">
+            長短影音腳本企劃、攝影後製編導、日系簡約雜誌風視覺美編。兼顧點閱率（CTR）與品牌信任沉澱。
+          </p>
+          <div class="pt-2 text-[11px] text-ink-muted font-mono">YouTube • 縮圖優化 • 攝影美學</div>
+        </div>
+
+        <!-- Skill 3 -->
+        <div class="space-y-3 p-6 bg-paper rounded-sm border editorial-border">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/60 text-clay rounded-full text-base mb-4">
+            <i class="fa-solid fa-laptop-code"></i>
+          </div>
+          <h4 class="font-serif font-bold text-base text-ink">MarTech 輕量自動化</h4>
+          <p class="text-xs text-ink-light leading-relaxed">
+            運用 HTML/CSS/JS 開發直覺好用的專屬網頁介面，搭配 Google Apps Script 與 Google Sheets 雲端資料庫，將繁瑣紙本與複雜核算轉為一鍵秒查。
+          </p>
+          <div class="pt-2 text-[11px] text-ink-muted font-mono">GAS • Web 前端 • Sheets 雲端資料庫</div>
+        </div>
+
+        <!-- Skill 4 -->
+        <div class="space-y-3 p-6 bg-paper rounded-sm border editorial-border">
+          <div class="w-10 h-10 flex items-center justify-center bg-sand/60 text-clay rounded-full text-base mb-4">
+            <i class="fa-solid fa-comments"></i>
+          </div>
+          <h4 class="font-serif font-bold text-base text-ink">新興社群與破圈傳播</h4>
+          <p class="text-xs text-ink-light leading-relaxed">
+            掌握 Threads、Instagram 等新興演算法生態，將冷門硬核知識化為具話題度的互動內容，實現高達 99% 的非追蹤者外溢擴散。
+          </p>
+          <div class="pt-2 text-[11px] text-ink-muted font-mono">Threads • IG • 社群心理學</div>
+        </div>
+
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= PHILOSOPHY / ABOUT (RUNNING MINDSET) ================= -->
+  <section id="philosophy" class="py-20 max-w-6xl mx-auto px-6">
+    <div class="bg-paper-card border editorial-border p-8 md:p-14 shadow-sm relative overflow-hidden">
+      
+      <!-- Decorative quote mark -->
+      <div class="absolute -right-6 -bottom-10 text-9xl text-sand/40 font-serif select-none pointer-events-none">
+        ”
+      </div>
+
+      <div class="grid grid-cols-1 lg:grid-cols-12 gap-8 items-center relative z-10">
+        <div class="lg:col-span-5 space-y-4">
+          <span class="text-xs uppercase tracking-widest text-clay font-mono">Work Philosophy</span>
+          <h3 class="font-serif text-2xl md:text-3xl font-bold text-ink leading-snug">
+            馬拉松的自律哲學：<br />
+            拆解目標，沉穩配速，<br />
+            在漫長賽道中完成每一個閉環。
+          </h3>
+          <div class="w-12 h-0.5 bg-clay"></div>
+        </div>
+
+        <div class="lg:col-span-7 space-y-4 text-xs md:text-sm text-ink-light leading-relaxed font-light">
+          <p>
+            工作之餘，我長期維持全馬訓練與規律月跑量的生活習慣。這項嚴格鍛鍊深刻塑造了我的執行性格——行銷如同長跑，短期的爆款是衝刺，但真正能讓企業持續獲利的是長效的節奏與健全的體質。
+          </p>
+          <p>
+            面對未知的市場波動或突如其來的演算法調整，我習慣先穩住步調，以客觀數據檢驗成效、拆解流程環節，並親自以程式與自動化工具打通卡點。我不僅追求策略的美感，更執著於讓每一個承諾在現實中落地生根。
+          </p>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= CONTACT & CALL TO ACTION ================= -->
+  <section id="contact" class="py-20 bg-slatewarm text-paper border-t editorial-border">
+    <div class="max-w-4xl mx-auto px-6 text-center space-y-8">
+      
+      <div>
+        <span class="text-xs uppercase tracking-widest text-sand/80 font-mono">Let's Connect</span>
+        <h2 class="font-serif text-3xl md:text-4xl font-bold mt-2 text-white">啟動下一階段的實質成長</h2>
+        <p class="text-xs md:text-sm text-paper/70 mt-3 font-light max-w-xl mx-auto leading-relaxed">
+          無論是品牌全通路整合行銷顧問、付費獲客漏斗診斷，或是實體門市 MarTech 自動化轉型，歡迎隨時交流。
+        </p>
+      </div>
+
+      <!-- Quick Action Buttons -->
+      <div class="flex flex-wrap justify-center gap-4 pt-4">
+        <button onclick="copyToClipboard('contact-email', 'yaling.hsiao.marketing@gmail.com')" class="px-6 py-3.5 bg-paper text-ink hover:bg-clay hover:text-white transition-colors duration-200 text-xs tracking-wider font-medium flex items-center space-x-2 rounded-sm shadow-md">
+          <i class="fa-regular fa-envelope"></i>
+          <span>複製電子信箱</span>
+        </button>
+
+        <a href="javascript:void(0)" onclick="openModal('modal-contact')" class="px-6 py-3.5 border border-paper/40 hover:border-paper text-paper transition-colors duration-200 text-xs tracking-wider flex items-center space-x-2 rounded-sm">
+          <i class="fa-solid fa-paper-plane"></i>
+          <span>發送線上留言</span>
+        </a>
+      </div>
+
+      <!-- Direct Contact Details Minimal Strip -->
+      <div class="pt-8 border-t border-paper/10 flex flex-wrap justify-center gap-8 text-xs text-paper/60 font-mono">
+        <div><span class="text-paper/40 mr-1.5">LOCATION:</span>台灣 Taichung / Taipei</div>
+        <div><span class="text-paper/40 mr-1.5">EXPERIENCE:</span>10+ Years</div>
+        <div><span class="text-paper/40 mr-1.5">FOCUS:</span>Performance &amp; MarTech</div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- ================= FOOTER ================= -->
+  <footer class="bg-[#242831] text-paper/40 text-[11px] py-6 border-t border-paper/5">
+    <div class="max-w-6xl mx-auto px-6 flex flex-col sm:flex-row items-center justify-between gap-4 font-mono">
+      <div>© 2026 蕭雅玲 Ya-Ling Hsiao. All Rights Reserved.</div>
+      <div class="flex space-x-6 text-paper/60">
+        <span>Curated with Japanese Editorial Design</span>
+      </div>
+    </div>
+  </footer>
+
+  <!-- ================= NOTIFICATION TOAST ================= -->
+  <div id="copy-toast" class="fixed bottom-6 right-6 z-50 bg-ink text-white px-5 py-3 rounded shadow-xl text-xs flex items-center space-x-2 opacity-0 pointer-events-none transform translate-y-3">
+    <i class="fa-solid fa-check text-green-400"></i>
+    <span id="toast-message">已成功複製到剪貼簿！</span>
+  </div>
+
+  <!-- ================= CASE STUDY DETAIL MODALS ================= -->
+
+  <!-- Modal 1: Meta Ads Detail -->
+  <div id="modal-ads" class="fixed inset-0 z-50 bg-ink/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-paper-card max-w-2xl w-full border editorial-border p-6 md:p-8 rounded-sm shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b editorial-border pb-4">
+        <div>
+          <span class="text-xs font-mono text-clay tracking-wider">PROJECT DEEP-DIVE</span>
+          <h3 class="font-serif text-xl font-bold text-ink">實體門市精準成效型廣告漏斗</h3>
+        </div>
+        <button onclick="closeModal('modal-ads')" class="text-ink-muted hover:text-ink text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-ink-light leading-relaxed">
+        <h4 class="font-bold text-ink text-sm">執行策略與受眾切片</h4>
+        <p>
+          針對台灣最普及的特定主力休旅車款（CC 與 HR-V）以及米其林主力長青胎款（Primacy 4+, PS5），在 Facebook 與 Instagram 採用多組痛點視覺（包含磨損警訊、行車寧靜度、雨天抓地煞停）進行動態輪播與單圖測試。
+        </p>
+
+        <h4 class="font-bold text-ink text-sm pt-2">關鍵驗證數據表 (2026/01 - 2026/11)</h4>
+        <div class="overflow-x-auto border editorial-border rounded">
+          <table class="w-full text-left text-[11px] divide-y divide-paper-border">
+            <thead class="bg-sand/40 font-mono text-ink">
+              <tr>
+                <th class="p-2.5">廣告組合專案</th>
+                <th class="p-2.5">支出金額</th>
+                <th class="p-2.5">訊息線索數</th>
+                <th class="p-2.5">單筆諮詢成本</th>
+                <th class="p-2.5">成效評級</th>
+              </tr>
+            </thead>
+            <tbody class="divide-y divide-paper-border/60">
+              <tr>
+                <td class="p-2.5 font-medium text-ink">米其林促銷專案 (260916-1130)</td>
+                <td class="p-2.5">NT$ 23,798</td>
+                <td class="p-2.5 font-bold">672 則</td>
+                <td class="p-2.5 text-clay font-bold">NT$ 35.41</td>
+                <td class="p-2.5 text-green-700">高於平均</td>
+              </tr>
+              <tr>
+                <td class="p-2.5 font-medium text-ink">CC+HRV 車主精準切片</td>
+                <td class="p-2.5">NT$ 8,573</td>
+                <td class="p-2.5 font-bold">286 則</td>
+                <td class="p-2.5 text-clay font-bold">NT$ 29.98</td>
+                <td class="p-2.5 text-green-700">高於平均</td>
+              </tr>
+              <tr class="bg-sand/20 font-medium">
+                <td class="p-2.5 text-ink">全年度帳戶累計加總</td>
+                <td class="p-2.5">NT$ 97,898</td>
+                <td class="p-2.5">2,077 則 (1,751 新客)</td>
+                <td class="p-2.5 text-clay font-bold">NT$ 47.1</td>
+                <td class="p-2.5">業界優異水準</td>
+              </tr>
+            </tbody>
+          </table>
+        </div>
+
+        <p class="text-ink-muted text-[11px] italic">
+          * 數據直接自 Meta Ads Manager 匯出驗證，帶來 233,407 位不重複精準觸及與 64 萬次有效曝光。
+        </p>
+      </div>
+
+      <div class="border-t editorial-border pt-4 flex justify-end">
+        <button onclick="closeModal('modal-ads')" class="px-5 py-2 bg-ink text-white text-xs rounded-sm hover:bg-clay transition-colors">
+          關閉視窗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 2: YouTube Detail -->
+  <div id="modal-yt" class="fixed inset-0 z-50 bg-ink/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-paper-card max-w-2xl w-full border editorial-border p-6 md:p-8 rounded-sm shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b editorial-border pb-4">
+        <div>
+          <span class="text-xs font-mono text-clay tracking-wider">PROJECT DEEP-DIVE</span>
+          <h3 class="font-serif text-xl font-bold text-ink">台灣輪胎王 YouTube 內容經營與精選高流量 Shorts</h3>
+        </div>
+        <button onclick="closeModal('modal-yt')" class="text-ink-muted hover:text-ink text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-ink-light leading-relaxed">
+        <div class="flex items-center justify-between">
+          <h4 class="font-bold text-ink text-sm">高流量 YouTube Shorts 代表作品</h4>
+          <span class="text-[11px] text-clay font-mono"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>點擊標題即可直達觀看</span>
+        </div>
+        
+        <div class="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          <!-- Short 1 -->
+          <a href="https://www.youtube.com/shorts/SMEvQPsxdRM" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded block group">
+            <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+              <span class="text-clay font-bold"><i class="fa-brands fa-youtube mr-1"></i>Shorts #1</span>
+              <span class="bg-white/80 px-2 py-0.5 rounded border text-[10px] text-ink font-semibold">44,000+ 次觀看</span>
+            </div>
+            <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-1">
+              《5 個問題看懂 PRIMACY 5！》
+            </div>
+            <p class="text-[11px] text-ink-muted mt-1 line-clamp-2">
+              快速直擊車主選胎五大核心疑問，以節奏明快的問答引導高完播率。
+            </p>
+          </a>
+
+          <!-- Short 2 -->
+          <a href="https://www.youtube.com/shorts/lZdDs1EGup4" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded block group">
+            <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+              <span class="text-clay font-bold"><i class="fa-brands fa-youtube mr-1"></i>Shorts #2</span>
+              <span class="bg-white/80 px-2 py-0.5 rounded border text-[10px] text-ink font-semibold">39,000+ 次觀看</span>
+            </div>
+            <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-1">
+              《全世界最貴的車子長這樣！CHATGPT 讓我破房了！》
+            </div>
+            <p class="text-[11px] text-ink-muted mt-1 line-clamp-2">
+              結合 AI 話題與豪車好奇心，創造極高擴散率與跨圈留言互動。
+            </p>
+          </a>
+
+          <!-- Short 3 -->
+          <a href="https://www.youtube.com/shorts/ACbpII4JP6k" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded block group">
+            <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+              <span class="text-clay font-bold"><i class="fa-brands fa-youtube mr-1"></i>Shorts #3</span>
+              <span class="bg-white/80 px-2 py-0.5 rounded border text-[10px] text-ink font-semibold">21,000+ 次觀看</span>
+            </div>
+            <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-1">
+              《輪胎5萬公里一定要換嗎？破解最常見迷思！》
+            </div>
+            <p class="text-[11px] text-ink-muted mt-1 line-clamp-2">
+              直擊保養盲點與花紋深度檢測，有效觸發車主到店保養需求。
+            </p>
+          </a>
+
+          <!-- Short 4 -->
+          <a href="https://www.youtube.com/shorts/uLOPXLeHlT0" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded block group">
+            <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+              <span class="text-clay font-bold"><i class="fa-brands fa-youtube mr-1"></i>Shorts #4</span>
+              <span class="bg-white/80 px-2 py-0.5 rounded border text-[10px] text-ink font-semibold">8,900+ 次觀看</span>
+            </div>
+            <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-1">
+              《為什麼新車輪圈越做越大？》
+            </div>
+            <p class="text-[11px] text-ink-muted mt-1 line-clamp-2">
+              深度解析視覺張力與油耗操控關聯，短時間引發輪改愛好者熱烈討論。
+            </p>
+          </a>
+        </div>
+
+        <h4 class="font-bold text-ink text-sm pt-3">長影音深耕與視覺封面優化</h4>
+        <div class="p-3.5 bg-sand/20 border editorial-border rounded space-y-2">
+          <div class="flex justify-between items-center text-[11px]">
+            <span class="text-ink font-medium">《米其林輪胎最強兄弟對決！PS5 與 Energy 版到底誰強？》</span>
+            <span class="font-mono text-clay font-bold">11,130 次 • 觀看時長 376 小時</span>
+          </div>
+          <p class="text-[11px] text-ink-muted">
+            全頻道平均縮圖點擊率（CTR）穩定維持在 <strong>5.95%</strong>（整體縮圖曝光突破 703,211 次），證明主題切角、視覺編排與內容腳本皆具備實戰爆發力與長尾效應。
+          </p>
+        </div>
+      </div>
+
+      <div class="border-t editorial-border pt-4 flex justify-end">
+        <button onclick="closeModal('modal-yt')" class="px-5 py-2 bg-ink text-white text-xs rounded-sm hover:bg-clay transition-colors">
+          關閉視窗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 3: Threads Detail -->
+  <div id="modal-threads" class="fixed inset-0 z-50 bg-ink/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-paper-card max-w-2xl w-full border editorial-border p-6 md:p-8 rounded-sm shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b editorial-border pb-4">
+        <div>
+          <span class="text-xs font-mono text-clay tracking-wider">AUDIENCE INSIGHTS &amp; CURATED POSTS</span>
+          <h3 class="font-serif text-xl font-bold text-ink">Threads 精選爆款貼文與受眾破圈分析</h3>
+        </div>
+        <button onclick="closeModal('modal-threads')" class="text-ink-muted hover:text-ink text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-ink-light leading-relaxed">
+        <div class="flex items-center justify-between">
+          <h4 class="font-bold text-ink text-sm">精選高互動爆款貼文代表作</h4>
+          <span class="text-[11px] text-clay font-mono"><i class="fa-solid fa-arrow-up-right-from-square mr-1"></i>點擊卡片直達 Threads</span>
+        </div>
+
+        <!-- Threads Featured Posts Grid -->
+        <div class="grid grid-cols-1 sm:grid-cols-3 gap-3">
+          <!-- Post 1 -->
+          <a href="https://www.threads.com/share/EBnnlLhEZ" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+                <span class="text-clay font-bold"><i class="fa-brands fa-threads mr-1"></i>Post #1</span>
+                <span class="text-[10px] text-ink-light bg-white/80 px-1.5 py-0.5 rounded border">熱門破圈</span>
+              </div>
+              <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-2">
+                車友換胎心態與共鳴探討
+              </div>
+              <p class="text-[11px] text-ink-muted mt-1.5 line-clamp-3">
+                以真實現場車主盲點引發熱烈討論，迅速被演算法推送至車迷探索頁面。
+              </p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-paper-border/60 flex items-center justify-between text-[11px] text-clay font-medium">
+              <span>前往 Threads</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Post 2 -->
+          <a href="https://www.threads.com/share/FIjeAfLzy" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+                <span class="text-clay font-bold"><i class="fa-brands fa-threads mr-1"></i>Post #2</span>
+                <span class="text-[10px] text-ink-light bg-white/80 px-1.5 py-0.5 rounded border">高黏著討論</span>
+              </div>
+              <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-2">
+                規格實戰解析與趣味切角
+              </div>
+              <p class="text-[11px] text-ink-muted mt-1.5 line-clamp-3">
+                破解生硬保修術語，融合時下熱門時事，吸引數百位車友在留言區交流互動。
+              </p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-paper-border/60 flex items-center justify-between text-[11px] text-clay font-medium">
+              <span>前往 Threads</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+
+          <!-- Post 3 -->
+          <a href="https://www.threads.com/share/K9pkeQMo5" target="_blank" rel="noopener noreferrer" class="p-3.5 bg-sand/30 hover:bg-sand/60 transition-colors border editorial-border rounded flex flex-col justify-between group">
+            <div>
+              <div class="flex items-center justify-between text-[11px] font-mono text-ink-muted mb-1.5">
+                <span class="text-clay font-bold"><i class="fa-brands fa-threads mr-1"></i>Post #3</span>
+                <span class="text-[10px] text-ink-light bg-white/80 px-1.5 py-0.5 rounded border">精準受眾</span>
+              </div>
+              <div class="font-serif font-bold text-ink group-hover:text-clay transition-colors text-xs line-clamp-2">
+                熱門車友圈與科技話題串聯
+              </div>
+              <p class="text-[11px] text-ink-muted mt-1.5 line-clamp-3">
+                打中 F1、AI 與汽車愛好者圈層，帶動非追蹤者外溢觸及率大幅飆升。
+              </p>
+            </div>
+            <div class="pt-3 mt-2 border-t border-paper-border/60 flex items-center justify-between text-[11px] text-clay font-medium">
+              <span>前往 Threads</span>
+              <i class="fa-solid fa-arrow-right text-[10px] group-hover:translate-x-1 transition-transform"></i>
+            </div>
+          </a>
+        </div>
+
+        <h4 class="font-bold text-ink text-sm pt-2">精準攻佔高消費力車主客群</h4>
+        
+        <div class="grid grid-cols-2 gap-4">
+          <div class="p-4 bg-sand/30 border editorial-border rounded">
+            <span class="text-[11px] font-mono text-ink-muted block mb-1">性別分佈</span>
+            <div class="text-2xl font-bold text-ink font-display">84.53% <span class="text-xs font-normal text-ink-light">男性</span></div>
+            <div class="text-[11px] text-ink-muted mt-1">完全吻合實體門市換胎決定者輪廓</div>
+          </div>
+          <div class="p-4 bg-sand/30 border editorial-border rounded">
+            <span class="text-[11px] font-mono text-ink-muted block mb-1">主力年齡層 (25-44歲)</span>
+            <div class="text-2xl font-bold text-clay font-display">72.19%</div>
+            <div class="text-[11px] text-ink-muted mt-1">35-44 歲佔 39.4%、25-34 歲佔 32.8%</div>
+          </div>
+        </div>
+
+        <h4 class="font-bold text-ink text-sm pt-2">社群圈層與發布時程策略</h4>
+        <ul class="list-disc list-inside space-y-1.5 text-ink-light">
+          <li><strong>精準標籤滲透：</strong>高度重疊 <em>#F1Threads</em>、<em>#AlThreads</em> 與 <em>#CarsOfThreads</em>，使貼文多次被演算法推入熱門精選。</li>
+          <li><strong>黃金發文時段：</strong>後台數據證實每週二至週四晚間 <strong>20:00 - 23:00</strong> 觸及最高（單時段最高突破 3.6 萬觸及）。</li>
+          <li><strong>外溢效應極致化：</strong>31.8 萬次總瀏覽中，超過 99% 源自非追蹤者，極大化品牌在年輕新車主心目中的專業好感度。</li>
+        </ul>
+      </div>
+
+      <div class="border-t editorial-border pt-4 flex justify-end">
+        <button onclick="closeModal('modal-threads')" class="px-5 py-2 bg-ink text-white text-xs rounded-sm hover:bg-clay transition-colors">
+          關閉視窗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 4: MarTech Detail -->
+  <div id="modal-martech" class="fixed inset-0 z-50 bg-ink/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-paper-card max-w-2xl w-full border editorial-border p-6 md:p-8 rounded-sm shadow-2xl space-y-6 max-h-[90vh] overflow-y-auto">
+      <div class="flex items-center justify-between border-b editorial-border pb-4">
+        <div>
+          <span class="text-xs font-mono text-clay tracking-wider">SYSTEM ARCHITECTURE</span>
+          <h3 class="font-serif text-xl font-bold text-ink">門市 VIP 查詢與雙軌計價自動化系統</h3>
+        </div>
+        <button onclick="closeModal('modal-martech')" class="text-ink-muted hover:text-ink text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <div class="space-y-4 text-xs text-ink-light leading-relaxed">
+        <h4 class="font-bold text-ink text-sm">問題背景與系統解法</h4>
+        <p>
+          門市前線人員面對進廠車主時，以往須人工查閱多張實體車主卡或不同活頁簿，導致算價耗時、容易核算錯誤。我獨立運用輕量化前端技術結合雲端架構開發出直覺查詢介面：
+        </p>
+
+        <div class="p-4 bg-sand/30 border editorial-border rounded space-y-2 font-mono text-[11px]">
+          <div class="text-clay font-bold">// 系統資料流架構</div>
+          <div>[門市現場查詢] ➔ Web 前端響應式介面（HTML/CSS/JS）</div>
+          <div>➔ Google Apps Script（後端邏輯運算與權益驗證 API）</div>
+          <div>➔ Google Sheets 雲端資料庫（輕量化會員與即時價目對照表）</div>
+          <div>➔ 一秒即時呈現：精準折扣金額、歷史保養紀錄與建議換胎方案</div>
+        </div>
+
+        <h4 class="font-bold text-ink text-sm pt-2">效益與實務成果</h4>
+        <ul class="list-disc list-inside space-y-1.5 text-ink-light">
+          <li><strong>工時縮短：</strong>現場報價查詢時間從原本 3-5 分鐘縮減至 5 秒內，整體行政工時下降逾 40%。</li>
+          <li><strong>錯誤率歸零：</strong>系統自動計算雙軌折抵方案與折扣上限，免除前線人工計算錯誤與收費爭議。</li>
+          <li><strong>零額外軟體支出：</strong>全面基於 Google Workspace 原生環境建置，零伺服器維護費與授權年費。</li>
+        </ul>
+      </div>
+
+      <div class="border-t editorial-border pt-4 flex justify-end">
+        <button onclick="closeModal('modal-martech')" class="px-5 py-2 bg-ink text-white text-xs rounded-sm hover:bg-clay transition-colors">
+          關閉視窗
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Modal 5: Interactive Contact Form Modal -->
+  <div id="modal-contact" class="fixed inset-0 z-50 bg-ink/70 backdrop-blur-sm hidden items-center justify-center p-4">
+    <div class="bg-paper-card max-w-lg w-full border editorial-border p-6 md:p-8 rounded-sm shadow-2xl space-y-6">
+      <div class="flex items-center justify-between border-b editorial-border pb-4">
+        <div>
+          <span class="text-xs font-mono text-clay tracking-wider">GET IN TOUCH</span>
+          <h3 class="font-serif text-xl font-bold text-ink">發送訊息給 蕭雅玲</h3>
+        </div>
+        <button onclick="closeModal('modal-contact')" class="text-ink-muted hover:text-ink text-lg p-2">
+          <i class="fa-solid fa-xmark"></i>
+        </button>
+      </div>
+
+      <form id="contact-form" onsubmit="handleFormSubmit(event)" class="space-y-4 text-xs">
+        <div>
+          <label class="block font-medium text-ink mb-1">您的姓名 / 稱呼</label>
+          <input type="text" required placeholder="例如：林先生 / 陳總監" class="w-full px-3 py-2 bg-paper border editorial-border focus:border-ink outline-none rounded-sm" />
+        </div>
+
+        <div>
+          <label class="block font-medium text-ink mb-1">您的電子信箱</label>
+          <input type="email" required placeholder="name@company.com" class="w-full px-3 py-2 bg-paper border editorial-border focus:border-ink outline-none rounded-sm" />
+        </div>
+
+        <div>
+          <label class="block font-medium text-ink mb-1">諮詢或合作類型</label>
+          <select class="w-full px-3 py-2 bg-paper border editorial-border focus:border-ink outline-none rounded-sm text-ink-light">
+            <option>品牌數位行銷策略顧問</option>
+            <option>Meta 成效型獲客廣告代操 / 診斷</option>
+            <option>YouTube / 社群影音策劃與視覺製作</option>
+            <option>MarTech 系統與流程自動化建置</option>
+            <option>全職職缺招募洽詢</option>
+          </select>
+        </div>
+
+        <div>
+          <label class="block font-medium text-ink mb-1">訊息內容簡述</label>
+          <textarea rows="3" required placeholder="請簡述您的需求、現況挑戰或預算期程..." class="w-full px-3 py-2 bg-paper border editorial-border focus:border-ink outline-none rounded-sm"></textarea>
+        </div>
+
+        <div class="pt-2">
+          <button type="submit" class="w-full py-3 bg-ink text-white font-medium hover:bg-clay transition-colors rounded-sm tracking-wide">
+            送出訊息
+          </button>
+        </div>
+      </form>
+    </div>
+  </div>
+
+  <!-- ================= JAVASCRIPT LOGIC ================= -->
+  <script>
+    // Project Category Filtering
+    function filterProjects(category) {
+      // Update button styling
+      const buttons = document.querySelectorAll('.filter-btn');
+      buttons.forEach(btn => {
+        btn.classList.remove('bg-ink', 'text-white', 'border-ink');
+        btn.classList.add('bg-white', 'text-ink-light', 'border-paper-border');
+      });
+
+      // Highlight active button
+      event.currentTarget.classList.remove('bg-white', 'text-ink-light', 'border-paper-border');
+      event.currentTarget.classList.add('bg-ink', 'text-white', 'border-ink');
+
+      // Filter cards
+      const cards = document.querySelectorAll('.project-card');
+      cards.forEach(card => {
+        if (category === 'all' || card.getAttribute('data-category') === category) {
+          card.classList.remove('hidden');
+        } else {
+          card.classList.add('hidden');
+        }
+      });
+    }
+
+    // Modal Control Functions
+    function openModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.remove('hidden');
+        modal.classList.add('flex');
+        document.body.style.overflow = 'hidden';
+      }
+    }
+
+    function closeModal(modalId) {
+      const modal = document.getElementById(modalId);
+      if (modal) {
+        modal.classList.add('hidden');
+        modal.classList.remove('flex');
+        document.body.style.overflow = 'auto';
+      }
+    }
+
+    // Close modal when clicking outside background
+    window.addEventListener('click', function(e) {
+      const openModals = document.querySelectorAll('[id^="modal-"]:not(.hidden)');
+      openModals.forEach(modal => {
+        if (e.target === modal) {
+          modal.classList.add('hidden');
+          modal.classList.remove('flex');
+          document.body.style.overflow = 'auto';
+        }
+      });
+    });
+
+    // Copy to Clipboard with iFrame Fallback
+    function copyToClipboard(key, text) {
+      const tempInput = document.createElement('textarea');
+      tempInput.value = text;
+      document.body.appendChild(tempInput);
+      tempInput.select();
+      try {
+        document.execCommand('copy');
+        showToast('已複製信箱：' + text);
+      } catch (err) {
+        showToast('請手動複製信箱：' + text);
+      }
+      document.body.removeChild(tempInput);
+    }
+
+    // Minimal Custom Toast Alert
+    function showToast(message) {
+      const toast = document.getElementById('copy-toast');
+      const toastMsg = document.getElementById('toast-message');
+      toastMsg.textContent = message;
+      toast.classList.remove('opacity-0', 'pointer-events-none', 'translate-y-3');
+      toast.classList.add('opacity-100', 'translate-y-0');
+
+      setTimeout(() => {
+        toast.classList.remove('opacity-100', 'translate-y-0');
+        toast.classList.add('opacity-0', 'pointer-events-none', 'translate-y-3');
+      }, 3000);
+    }
+
+    // Simple Form Submission Handler
+    function handleFormSubmit(e) {
+      e.preventDefault();
+      closeModal('modal-contact');
+      showToast('感謝您的來信！訊息已送出，我將儘速與您聯繫。');
+      e.target.reset();
+    }
+  </script>
+</body>
+</html>
